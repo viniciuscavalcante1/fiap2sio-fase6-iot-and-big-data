@@ -33,3 +33,18 @@ Introdução dos tópicos.
 	- RIR - Registro Regional da Internet
 	- [[IPV4]], [[IPV6]] e seus limites
 
+### Cap 03 - Uma Imensidão da Dados
+- [[Big data]]
+- [[5 V’s do Big Data]]
+- [[Analytics]]
+- [[Análise descritiva]]
+- [[Análise diagnóstica]]
+- [[Análise preditiva]]
+- [[Análise prescritiva]]
+- [[Data warehouse]]
+- [[Data lake]]
+- [[ETL]]
+- [[ELT]]
+- [[noSQL]]
+- [[Apache Hadoop]]
+- [[Map Reduce]]
