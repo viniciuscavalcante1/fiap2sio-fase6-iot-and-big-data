@@ -18,4 +18,12 @@ public class Arvore {
             mostra_pre_ordem(a.dir);
         }
     }
+
+    public static void mostra_pos_ordem(Arvore a) {
+        if (a != null) {
+            mostra_pos_ordem(a.esq);
+            mostra_pos_ordem(a.dir);
+            System.out.println(" " + a.dado);
+        }
+    }
 }
