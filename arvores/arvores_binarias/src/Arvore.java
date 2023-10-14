@@ -10,4 +10,12 @@ public class Arvore {
             mostra_em_ordem(a.dir);
         }
     }
+
+    public static void mostra_pre_ordem(Arvore a) {
+        if (a != null) {
+            System.out.println(" " + a.dado);
+            mostra_pre_ordem(a.esq);
+            mostra_pre_ordem(a.dir);
+        }
+    }
 }
