@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class ArvoreBuscaBinaria {
     public int dado;
     public ArvoreBuscaBinaria esq;
@@ -106,5 +108,76 @@ public class ArvoreBuscaBinaria {
             p = balanceamento(p);
         }
         return p;
+    }
+    public static ArvoreBuscaBinaria remove_valor (ArvoreBuscaBinaria p, int info) {
+        if (p!=null){
+            if(info == p.dado){
+                if (p.esq == null && p.dir==null)
+                    return null;
+                if (p.esq==null){
+                    return  p.dir;
+                }
+                else{
+                    if (p.dir==null){
+                        return p.esq;
+                    }
+                    else{
+                        ArvoreBuscaBinaria aux, ref;
+                        ref = p.dir;
+                        aux = p.dir;
+                        while (aux.esq != null)
+                            aux = aux.esq;
+                        aux.esq = p.esq;
+                        return ref;
+                    }
+                }
+            }
+            else{
+                if(info<p.dado)
+                    p.esq = remove_valor(p.esq,info);
+                else
+                    p.dir = remove_valor(p.dir,info);
+            }
+        }
+        return p;
+    }
+
+
+    public static ArvoreBuscaBinaria atualiza_alturas(ArvoreBuscaBinaria p) {
+/*atualiza a informação da altura de cada nó depois da
+remoção percorre a árvore usando percurso pós-ordem para ajustar primeiro os nós folhas (profundidade maior) e depois os níveis acima */
+
+        if( p != null) {
+            p.esq = atualiza_alturas(p.esq);
+            if (p.esq == null)
+                p.h_esq = 0;
+            else if (p.esq.h_esq > p.esq.h_dir)
+                p.h_esq = p.esq.h_esq+1;
+            else
+                p.h_esq = p.esq.h_dir+1;
+            p.dir = atualiza_alturas(p.dir);
+            if (p.dir == null)
+                p.h_dir = 0;
+            else if (p.dir.h_esq > p.dir.h_dir)
+                p.h_dir = p.dir.h_esq+1;
+            else
+                p.h_dir = p.dir.h_dir+1;
+
+            p = balanceamento(p);
+        }
+        return p;
+    }
+
+
+    public static void main(String[] args) {
+        Scanner entra = new Scanner(System.in);
+        ArvoreBuscaBinaria raiz = init();
+        int info;
+
+        /*trecho que remove um nó com um determinado valor escolhido pelo usuário */
+        System.out.print("Digite valor do nó a ser removido: ");
+        info = entra.nextInt();
+        raiz = remove_valor(raiz, info);
+        raiz = atualiza_alturas(raiz);
     }
 }
