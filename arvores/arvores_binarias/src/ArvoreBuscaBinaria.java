@@ -2,6 +2,8 @@ public class ArvoreBuscaBinaria {
     public int dado;
     public ArvoreBuscaBinaria esq;
     public ArvoreBuscaBinaria dir;
+    public int h_esq;
+    public int h_dir;
 
     public static ArvoreBuscaBinaria init() {
         return null;
