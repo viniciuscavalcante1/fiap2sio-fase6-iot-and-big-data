@@ -1,5 +1,5 @@
 public class ArvoreBuscaBinaria {
-    public int dado;
+    public int dado;_
     public ArvoreBuscaBinaria esq;
     public ArvoreBuscaBinaria dir;
     public int h_esq;
@@ -57,5 +57,10 @@ public class ArvoreBuscaBinaria {
                 }
             }
         } return a;
+    }
+
+    public static ArvoreBuscaBinaria rotacao_direita (ArvoreBuscaBinaria p) {
+
+
     }
 }
