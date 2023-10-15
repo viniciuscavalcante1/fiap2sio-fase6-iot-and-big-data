@@ -142,7 +142,29 @@ public class ArvoreBuscaBinaria {
         return p;
     }
 
+    public static void mostra_em_ordem(ArvoreBuscaBinaria a) {
+        if (a != null) {
+            mostra_em_ordem(a.esq);
+            System.out.println(" " + a.dado);
+            mostra_em_ordem(a.dir);
+        }
+    }
 
+    public static void mostra_pre_ordem(ArvoreBuscaBinaria a) {
+        if (a != null) {
+            System.out.println(" " + a.dado);
+            mostra_pre_ordem(a.esq);
+            mostra_pre_ordem(a.dir);
+        }
+    }
+
+    public static void mostra_pos_ordem(ArvoreBuscaBinaria a) {
+        if (a != null) {
+            mostra_pos_ordem(a.esq);
+            mostra_pos_ordem(a.dir);
+            System.out.println(" " + a.dado);
+        }
+    }
     public static ArvoreBuscaBinaria atualiza_alturas(ArvoreBuscaBinaria p) {
 /*atualiza a informação da altura de cada nó depois da
 remoção percorre a árvore usando percurso pós-ordem para ajustar primeiro os nós folhas (profundidade maior) e depois os níveis acima */
