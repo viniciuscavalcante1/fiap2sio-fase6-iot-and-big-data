@@ -60,7 +60,11 @@ public class ArvoreBuscaBinaria {
     }
 
     public static ArvoreBuscaBinaria rotacao_direita (ArvoreBuscaBinaria p) {
-
-
+        ArvoreBuscaBinaria q, temp;
+        q = p.esq;
+        temp = q.dir;
+        q.dir = p;
+        p.esq = temp;
+        return q;
     }
 }
