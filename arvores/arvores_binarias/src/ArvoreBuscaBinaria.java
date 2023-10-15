@@ -67,4 +67,14 @@ public class ArvoreBuscaBinaria {
         p.esq = temp;
         return q;
     }
+
+    public static ArvoreBuscaBinaria rotacao_esquerda (ArvoreBuscaBinaria p) {
+        // faz rotação para esquerda em relação ao nó apontado por p
+        ArvoreBuscaBinaria q, temp;
+        q = p.dir;
+        temp = q.esq;
+        q.esq = p;
+        p.dir = temp;
+        return q;
+    }
 }
